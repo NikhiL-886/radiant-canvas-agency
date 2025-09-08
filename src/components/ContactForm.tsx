@@ -54,8 +54,8 @@ const ContactForm = () => {
     {
       icon: Mail,
       title: "Email Us",
-      content: "hello@samtechdigital.com",
-      action: "mailto:hello@samtechdigital.com"
+      content: "samtech.digital.work@gmail.com",
+      action: "mailto:samtech.digital.work@gmail.com"
     },
     {
       icon: Phone,
