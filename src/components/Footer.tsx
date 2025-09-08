@@ -33,7 +33,7 @@ const Footer = () => {
     { icon: Facebook, href: "#", label: "Facebook" },
     { icon: Twitter, href: "#", label: "Twitter" },
     { icon: Linkedin, href: "#", label: "LinkedIn" },
-    { icon: Instagram, href: "#", label: "Instagram" },
+    { icon: Instagram, href: "https://www.instagram.com/samtech.digital_?igsh=ajZ3OW9oODBzc29y", label: "Instagram" },
     { icon: Github, href: "#", label: "GitHub" },
   ];
 

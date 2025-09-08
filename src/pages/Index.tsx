@@ -7,11 +7,13 @@ import Pricing from "@/components/Pricing";
 import ContactForm from "@/components/ContactForm";
 import Footer from "@/components/Footer";
 import Contact from "@/components/Contact";
+import FloatingWhatsAppButton from "@/components/FloatingWhatsappButton";
 
 const Index = () => {
   return (
     <div className="min-h-screen">
       <Header />
+      <FloatingWhatsAppButton />
       <Hero />
       <Services />
       <ClientLogos />
