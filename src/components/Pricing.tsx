@@ -166,12 +166,14 @@ const Pricing = () => {
             <p className="text-foreground/60 mb-4">
               Need a custom quote? Let's discuss your specific requirements.
             </p>
+            <Link to='/form'>
             <Button 
               variant="outline" 
               className="border-accent/50 text-accent hover:bg-accent/10"
             >
               Request Custom Quote
             </Button>
+            </Link>
           </div>
         </div>
       </div>
