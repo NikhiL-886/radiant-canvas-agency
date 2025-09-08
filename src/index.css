@@ -215,11 +215,11 @@ All colors MUST be HSL.
   }
 
   .animate-vertical-scroll {
-    animation: vertical-scroll 40s linear infinite;
+    animation: vertical-scroll 30s linear infinite;
   }
 
   .animate-vertical-scroll-reverse {
-    animation: vertical-scroll-reverse 40s linear infinite;
+    animation: vertical-scroll-reverse 30s linear infinite;
   }
 
   
