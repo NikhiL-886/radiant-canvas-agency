@@ -20,7 +20,7 @@ const Portfolio = () => {
       title: "TechCorp Enterprise",
       category: "web",
       description: "Enterprise web application with advanced analytics dashboard",
-      image: "/src/assets/tech-corp.jpg",
+      image: "/public/assets/tech-corp.jpg",
       tags: ["React", "Node.js", "PostgreSQL"],
       metrics: { users: "50K+", conversion: "+85%", rating: 4.9 }
     },
@@ -29,7 +29,7 @@ const Portfolio = () => {
       title: "Fashion Store",
       category: "ecommerce",
       description: "Modern e-commerce platform with seamless checkout experience",
-      image: "/src/assets/fashion-store.jpg",
+      image: "/public/assets/fashion-store.jpg",
       tags: ["Shopify", "React", "Stripe"],
       metrics: { users: "25K+", conversion: "+120%", rating: 4.8 }
     },
@@ -38,7 +38,7 @@ const Portfolio = () => {
       title: "FinTech Mobile App",
       category: "mobile",
       description: "Secure financial mobile application with real-time transactions",
-      image: "/src/assets/mobile-app.jpg",
+      image: "/public/assets/mobile-app.jpg",
       tags: ["React Native", "Firebase", "Banking API"],
       metrics: { users: "100K+", conversion: "+95%", rating: 4.7 }
     },
@@ -47,7 +47,7 @@ const Portfolio = () => {
       title: "Creative Agency",
       category: "branding",
       description: "Complete brand identity and website for digital creative agency",
-      image: "/src/assets/creative-agency.jpg",
+      image: "/public/assets/creative-agency.jpg",
       tags: ["Brand Design", "Web Design", "Marketing"],
       metrics: { users: "15K+", conversion: "+150%", rating: 5.0 }
     },
@@ -56,7 +56,7 @@ const Portfolio = () => {
       title: "Restaurant Chain",
       category: "web",
       description: "Multi-location restaurant website with online ordering system",
-      image: "/src/assets/restaurant-chain.jpg",
+      image: "/public/assets/restaurant-chain.jpg",
       tags: ["WordPress", "WooCommerce", "POS Integration"],
       metrics: { users: "30K+", conversion: "+200%", rating: 4.6 }
     },
@@ -65,7 +65,7 @@ const Portfolio = () => {
       title: "Healthcare Platform",
       category: "web",
       description: "HIPAA-compliant healthcare platform for patient management",
-      image: "/src/assets/healthcare-platform.jpg",
+      image: "/public/assets/healthcare-platform.jpg",
       tags: ["HIPAA", "React", "Healthcare APIs"],
       metrics: { users: "40K+", conversion: "+75%", rating: 4.9 }
     }

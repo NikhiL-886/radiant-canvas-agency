@@ -3,41 +3,41 @@ import { ArrowRight, Code, Palette, Rocket } from "lucide-react";
 
 const Hero = () => {
   const clients = [
-    { name: "TechCorp", logo: "/src/assets/hero-mockups.jpg" },
-    { name: "InnovateIO", logo: "/src/assets/hero-mockups-1.jpg" },
-    { name: "DataFlow", logo: "/src/assets/hero-mockups-2.jpg" },
-    { name: "CloudBase", logo: "/src/assets/hero-mockups-3.jpg" },
-    { name: "FutureTech", logo: "/src/assets/hero-mockups-4.jpg" },
-    { name: "DigitalPro", logo: "/src/assets/hero-mockups-5.png" },
-    { name: "WebSolutions", logo: "/src/assets/hero-mockups-6.png" },
-    { name: "AppMakers", logo: "/src/assets/hero-mockups-7.png" },
-    { name: "Motherfuckers", logo: "/src/assets/hero-mockups-8.png" },
+    { name: "TechCorp", logo: "/public/assets/hero-mockups.jpg" },
+    { name: "InnovateIO", logo: "/public/assets/hero-mockups-1.jpg" },
+    { name: "DataFlow", logo: "/public/assets/hero-mockups-2.jpg" },
+    { name: "CloudBase", logo: "/public/assets/hero-mockups-3.jpg" },
+    { name: "FutureTech", logo: "/public/assets/hero-mockups-4.jpg" },
+    { name: "DigitalPro", logo: "/public/assets/hero-mockups-5.png" },
+    { name: "WebSolutions", logo: "/public/assets/hero-mockups-6.png" },
+    { name: "AppMakers", logo: "/public/assets/hero-mockups-7.png" },
+    { name: "Motherfuckers", logo: "/public/assets/hero-mockups-8.png" },
   ];
 
   // First randomized array
   const clients1 = [
-    { name: "FutureTech", logo: "/src/assets/hero-mockups-4.jpg" },
-    { name: "CloudBase", logo: "/src/assets/hero-mockups-3.jpg" },
-    { name: "Motherfuckers", logo: "/src/assets/hero-mockups-8.png" },
-    { name: "DataFlow", logo: "/src/assets/hero-mockups-2.jpg" },
-    { name: "AppMakers", logo: "/src/assets/hero-mockups-7.png" },
-    { name: "TechCorp", logo: "/src/assets/hero-mockups.jpg" },
-    { name: "WebSolutions", logo: "/src/assets/hero-mockups-6.png" },
-    { name: "DigitalPro", logo: "/src/assets/hero-mockups-5.png" },
-    { name: "InnovateIO", logo: "/src/assets/hero-mockups-1.jpg" },
+    { name: "FutureTech", logo: "/public/assets/hero-mockups-4.jpg" },
+    { name: "CloudBase", logo: "/public/assets/hero-mockups-3.jpg" },
+    { name: "Motherfuckers", logo: "/public/assets/hero-mockups-8.png" },
+    { name: "DataFlow", logo: "/public/assets/hero-mockups-2.jpg" },
+    { name: "AppMakers", logo: "/public/assets/hero-mockups-7.png" },
+    { name: "TechCorp", logo: "/public/assets/hero-mockups.jpg" },
+    { name: "WebSolutions", logo: "/public/assets/hero-mockups-6.png" },
+    { name: "DigitalPro", logo: "/public/assets/hero-mockups-5.png" },
+    { name: "InnovateIO", logo: "/public/assets/hero-mockups-1.jpg" },
   ];
 
   // Second randomized array
   const clients2 = [
-    { name: "AppMakers", logo: "/src/assets/hero-mockups-7.png" },
-    { name: "TechCorp", logo: "/src/assets/hero-mockups.jpg" },
-    { name: "WebSolutions", logo: "/src/assets/hero-mockups-6.png" },
-    { name: "FutureTech", logo: "/src/assets/hero-mockups-4.jpg" },
-    { name: "Motherfuckers", logo: "/src/assets/hero-mockups-8.png" },
-    { name: "CloudBase", logo: "/src/assets/hero-mockups-3.jpg" },
-    { name: "InnovateIO", logo: "/src/assets/hero-mockups-1.jpg" },
-    { name: "DigitalPro", logo: "/src/assets/hero-mockups-5.png" },
-    { name: "DataFlow", logo: "/src/assets/hero-mockups-2.jpg" },
+    { name: "AppMakers", logo: "/public/assets/hero-mockups-7.png" },
+    { name: "TechCorp", logo: "/public/assets/hero-mockups.jpg" },
+    { name: "WebSolutions", logo: "/public/assets/hero-mockups-6.png" },
+    { name: "FutureTech", logo: "/public/assets/hero-mockups-4.jpg" },
+    { name: "Motherfuckers", logo: "/public/assets/hero-mockups-8.png" },
+    { name: "CloudBase", logo: "/public/assets/hero-mockups-3.jpg" },
+    { name: "InnovateIO", logo: "/public/assets/hero-mockups-1.jpg" },
+    { name: "DigitalPro", logo: "/public/assets/hero-mockups-5.png" },
+    { name: "DataFlow", logo: "/public/assets/hero-mockups-2.jpg" },
   ];
 
 

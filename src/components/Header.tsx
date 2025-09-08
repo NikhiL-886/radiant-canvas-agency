@@ -37,7 +37,7 @@ const Header = () => {
           {/* Logo */}
           <div className="flex items-center space-x-3">
             <img 
-              src="/src/assets/samtech-logo.png" 
+              src="/public/assets/samtech-logo.png" 
               alt="Samtech Digital" 
               className="h-auto w-40"
             />

@@ -1,10 +1,10 @@
 const ClientLogos = () => {
   const clients = [
-    { name: "TechCorp", logo: "/src/assets/brands-1.png" },
-    { name: "InnovateIO", logo: "/src/assets/brands-2.png" },
-    { name: "DataFlow", logo: "/src/assets/brands-3.png" },
-    { name: "CloudBase", logo: "/src/assets/brands-4.png" },
-    { name: "FutureTech", logo: "/src/assets/brands-5.png" },
+    { name: "TechCorp", logo: "/public/assets/brands-1.png" },
+    { name: "InnovateIO", logo: "/public/assets/brands-2.png" },
+    { name: "DataFlow", logo: "/public/assets/brands-3.png" },
+    { name: "CloudBase", logo: "/public/assets/brands-4.png" },
+    { name: "FutureTech", logo: "/public/assets/brands-5.png" },
   ];
 
   return (
