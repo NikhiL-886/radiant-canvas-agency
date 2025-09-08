@@ -73,7 +73,7 @@ const Header = () => {
             className="md:hidden text-foreground"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24}/>}
           </button>
         </div>
 
@@ -91,12 +91,14 @@ const Header = () => {
                   {item.name}
                 </a>
               ))}
-              <Button 
-                variant="default" 
-                className="bg-gradient-to-r from-accent to-primary-glow mt-4"
+              <Link 
+              to='/form'>
+              <Button
+              className="bg-gradient-to-r from-accent to-primary-glow hover:scale-105 transition-transform duration-300 animate-glow"              
               >
-                Request a Demo
+              Request a Demo
               </Button>
+            </Link>
             </nav>
           </div>
         )}

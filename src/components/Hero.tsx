@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Code, Palette, Rocket } from "lucide-react";
+import { Link } from "react-router-dom";
 
 
 const Hero = () => {
@@ -145,6 +146,7 @@ const Hero = () => {
             className="flex flex-col sm:flex-row gap-4 justify-start mb-12 animate-slide-up"
             style={{ animationDelay: "0.6s" }}
           >
+            <Link to='/form'>
             <Button
               size="lg"
               className="bg-gradient-to-r from-accent to-primary-glow hover:scale-105 transition-transform duration-300 group"
@@ -152,6 +154,8 @@ const Hero = () => {
               Start Your Project
               <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Button>
+            </Link>
+            <Link to='/portfolio'>
             <Button
               size="lg"
               variant="outline"
@@ -159,6 +163,7 @@ const Hero = () => {
             >
               View Our Work
             </Button>
+            </Link>
           </div>
         </div>
       </div>

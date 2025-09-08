@@ -1,6 +1,7 @@
 import { Check, Star, Zap, Crown } from "lucide-react";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const Pricing = () => {
   const plans = [
@@ -120,7 +121,7 @@ const Pricing = () => {
                     </li>
                   ))}
                 </ul>
-
+                <Link to='/form'>
                 <Button 
                   className={`w-full ${
                     plan.highlighted 
@@ -131,6 +132,7 @@ const Pricing = () => {
                 >
                   {plan.price === "Custom" ? "Contact Us" : "Get Started"}
                 </Button>
+                </Link>
               </CardContent>
             </Card>
           ))}

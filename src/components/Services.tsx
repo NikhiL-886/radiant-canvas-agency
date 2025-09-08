@@ -1,5 +1,7 @@
 import { Monitor, Smartphone, ShoppingCart, Search, PenTool, BarChart } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "./ui/button";
+import { Link } from "react-router-dom";
 
 const Services = () => {
   const services = [
@@ -97,9 +99,11 @@ const Services = () => {
             <p className="text-foreground/80 mb-6 max-w-2xl mx-auto">
               Let's discuss how we can help transform your digital presence and achieve your business goals.
             </p>
-            <button className="bg-gradient-to-r from-accent to-primary-glow px-8 py-4 rounded-lg font-semibold hover:scale-105 transition-transform duration-300">
+            <Link to='/form'>
+            <Button className="bg-gradient-to-r from-accent to-primary-glow px-8 py-4 rounded-lg font-semibold hover:scale-105 transition-transform duration-300">
               Get Free Consultation
-            </button>
+            </Button>
+            </Link>
           </div>
         </div>
       </div>
