@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Star, Users, TrendingUp } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Portfolio = () => {
   const [activeCategory, setActiveCategory] = useState("all");
@@ -17,57 +18,64 @@ const Portfolio = () => {
   const projects = [
     {
       id: 1,
-      title: "TechCorp Enterprise",
+      title: "Apna Vakil",
       category: "web",
-      description: "Enterprise web application with advanced analytics dashboard",
-      image: "/assets/tech-corp.jpg",
+      description: "Online Lawyer hiring and consultation platform",
+      image: "/assets/ApnaVakil.png",
       tags: ["React", "Node.js", "PostgreSQL"],
-      metrics: { users: "50K+", conversion: "+85%", rating: 4.9 }
+      metrics: { users: "50K+", conversion: "+85%", rating: 4.9 },
+      projectLink: 'https://www.apnavakil.online/'
     },
     {
       id: 2,
-      title: "Fashion Store",
+      title: "Rumer",
       category: "ecommerce",
-      description: "Modern e-commerce platform with seamless checkout experience",
-      image: "/assets/fashion-store.jpg",
-      tags: ["Shopify", "React", "Stripe"],
-      metrics: { users: "25K+", conversion: "+120%", rating: 4.8 }
+      description: "Modern social media platform with seamless experience",
+      image: "/assets/Rumer.png",
+      tags: ["React-native", "React", "supabase"],
+      metrics: { users: "25K+", conversion: "+120%", rating: 4.8 },
+      projectLink: 'https://www.rumer.live/'
+      
     },
     {
       id: 3,
-      title: "FinTech Mobile App",
+      title: "Ansal Crown Heights",
       category: "mobile",
       description: "Secure financial mobile application with real-time transactions",
-      image: "/assets/mobile-app.jpg",
-      tags: ["React Native", "Firebase", "Banking API"],
-      metrics: { users: "100K+", conversion: "+95%", rating: 4.7 }
+      image: "/assets/AnsalProperties.png",
+      tags: ["React", "Firebase", "MongoDB"],
+      metrics: { users: "100K+", conversion: "+95%", rating: 4.7 },
+      projectLink: 'https://www.ansalcrownheights.net/'
     },
     {
       id: 4,
-      title: "Creative Agency",
+      title: "Modi Coin",
       category: "branding",
-      description: "Complete brand identity and website for digital creative agency",
-      image: "/assets/creative-agency.jpg",
-      tags: ["Brand Design", "Web Design", "Marketing"],
-      metrics: { users: "15K+", conversion: "+150%", rating: 5.0 }
+      description: "Blockchain based erc20 token -- Memecoin with 1 million users",
+      image: "/assets/ModiCoin.png",
+      tags: ["Ethereum", "React", "Metamask"],
+      metrics: { users: "1M+", conversion: "+150%", rating: 5.0 },
+      projectLink: 'https://www.modicoin.vercel.app/'
     },
     {
       id: 5,
-      title: "Restaurant Chain",
+      title: "Anushree Greens",
       category: "web",
-      description: "Multi-location restaurant website with online ordering system",
-      image: "/assets/restaurant-chain.jpg",
+      description: "The Realestate company operating in multiple locations",
+      image: "/assets/Anushree.png",
       tags: ["WordPress", "WooCommerce", "POS Integration"],
-      metrics: { users: "30K+", conversion: "+200%", rating: 4.6 }
+      metrics: { users: "30K+", conversion: "+200%", rating: 4.6 },
+      projectLink: 'https://www.anushreegreens.com/'
     },
     {
       id: 6,
-      title: "Healthcare Platform",
+      title: "Sunday Slam",
       category: "web",
-      description: "HIPAA-compliant healthcare platform for patient management",
-      image: "/assets/healthcare-platform.jpg",
-      tags: ["HIPAA", "React", "Healthcare APIs"],
-      metrics: { users: "40K+", conversion: "+75%", rating: 4.9 }
+      description: "The sports events organising company having regstration with payment and statistiscs for player performance data",
+      image: "/assets/Sunday-Slam.png",
+      tags: ["Vercel", "React", "Razorpay"],
+      metrics: { users: "40K+", conversion: "+75%", rating: 4.9 },
+      projectLink: 'https://www.sundayslam.vercel.app/'
     }
   ];
 
@@ -125,12 +133,18 @@ const Portfolio = () => {
                   className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <a
+                  href={project.projectLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                 <Button
                   size="sm"
                   className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-accent/90 hover:bg-accent"
                 >
                   <ExternalLink className="w-4 h-4" />
                 </Button>
+                </a>
               </div>
 
               <CardContent className="p-6">

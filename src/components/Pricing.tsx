@@ -1,64 +1,154 @@
-import { Check, Star, Zap, Crown } from "lucide-react";
+import { Check, Star, Zap, Crown, Rocket, Diamond } from "lucide-react";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
 const Pricing = () => {
+  // const plans = [
+  //   {
+  //     name: "Starter",
+  //     icon: Star,
+  //     price: "4500",
+  //     description: "Perfect for small businesses and startups",
+  //     features: [
+  //       "Mobile responsive design",
+  //       "Basic SEO optimization",
+  //       "Contact form integration",
+  //       "Social media links",
+  //       "30 days support"
+  //     ],
+  //     highlighted: false,
+  //     timeline: "1 week delivery"
+  //   },
+  //   {
+  //     name: "Professional",
+  //     icon: Zap,
+  //     price: "6,999",
+  //     description: "Ideal for growing businesses",
+  //     features: [
+  //       "Advanced animations",
+  //       "CMS integration",
+  //       "Advanced SEO package",
+  //       "Google Analytics setup",
+  //       "E-commerce ready",
+  //       "90 days support",
+  //       "Performance optimization"
+  //     ],
+  //     highlighted: true,
+  //     timeline: "2-3 weeks delivery"
+  //   },
+  //   {
+  //     name: "Enterprise",
+  //     icon: Crown,
+  //     price: "Custom",
+  //     description: "For large-scale applications",
+  //     features: [
+  //       "Unlimited pages",
+  //       "Custom functionality",
+  //       "Advanced integrations",
+  //       "Multi-language support",
+  //       "Advanced security",
+  //       "Priority support",
+  //       "6 months support",
+  //       "Training included",
+  //       "Dedicated project manager"
+  //     ],
+  //     highlighted: false,
+  //     timeline: "4-6 weeks delivery"
+  //   }
+  // ];
+
   const plans = [
-    {
-      name: "Starter",
-      icon: Star,
-      price: "4500",
-      description: "Perfect for small businesses and startups",
-      features: [
-        // "5-page custom website",
-        "Mobile responsive design",
-        "Basic SEO optimization",
-        "Contact form integration",
-        "Social media links",
-        "30 days support"
-      ],
-      highlighted: false,
-      timeline: "1 week delivery"
-    },
-    {
-      name: "Professional",
-      icon: Zap,
-      price: "6,999",
-      description: "Ideal for growing businesses",
-      features: [
-        // "10-page custom website",
-        "Advanced animations",
-        "CMS integration",
-        "Advanced SEO package",
-        "Google Analytics setup",
-        "E-commerce ready",
-        "90 days support",
-        "Performance optimization"
-      ],
-      highlighted: true,
-      timeline: "2-3 weeks delivery"
-    },
-    {
-      name: "Enterprise",
-      icon: Crown,
-      price: "Custom",
-      description: "For large-scale applications",
-      features: [
-        "Unlimited pages",
-        "Custom functionality",
-        "Advanced integrations",
-        "Multi-language support",
-        "Advanced security",
-        "Priority support",
-        "6 months support",
-        "Training included",
-        "Dedicated project manager"
-      ],
-      highlighted: false,
-      timeline: "4-6 weeks delivery"
-    }
-  ];
+  {
+    name: "Starter",
+    icon: Star,
+    price: "4,500",
+    description: "Perfect for small businesses and startups",
+    features: [
+      "Mobile responsive design",
+      "Basic SEO optimization",
+      "Contact form integration",
+      "Social media links",
+      "30 days support"
+    ],
+    highlighted: false,
+    timeline: "1 week delivery"
+  },
+  {
+    name: "Professional",
+    icon: Zap,
+    price: "6,999",
+    description: "Ideal for growing businesses",
+    features: [
+      "Advanced animations",
+      "CMS integration",
+      "Advanced SEO package",
+      "Google Analytics setup",
+      "E-commerce ready",
+      "90 days support",
+      "Performance optimization"
+    ],
+    highlighted: true,
+    timeline: "2-3 weeks delivery"
+  },
+  {
+    name: "Growth",
+    icon: Rocket,
+    price: "15,000",
+    description: "Great for businesses ready to scale with stronger online presence",
+    features: [
+      "Up to 10 custom-designed pages",
+      "Blog/News section with CMS",
+      "SEO keyword optimization & on-page SEO",
+      "Basic content writing support",
+      "Integration with payment gateways (Stripe, Razorpay, etc.)",
+      "Email marketing integration (Mailchimp, etc.)",
+      "3 months ongoing support",
+      "Performance testing & optimization"
+    ],
+    highlighted: false,
+    timeline: "4 weeks delivery"
+  },
+  {
+    name: "Premium",
+    icon: Diamond,
+    price: "35,000",
+    description: "Best choice for businesses looking for advanced features & long-term growth",
+    features: [
+      "Up to 25 custom pages",
+      "Membership/Subscription system",
+      "E-commerce with advanced product filters & checkout flow",
+      "Advanced SEO strategy (technical + off-page)",
+      "Custom API integrations (CRM, ERP, etc.)",
+      "Multi-device performance tuning",
+      "Priority email & chat support (6 months)",
+      "Brand style guide & reusable design components",
+      "Dedicated testing & QA cycles",
+      "Training for your team"
+    ],
+    highlighted: true,
+    timeline: "6 weeks delivery"
+  },
+  {
+    name: "Enterprise",
+    icon: Crown,
+    price: "Custom",
+    description: "For large-scale applications",
+    features: [
+      "Unlimited pages",
+      "Custom functionality",
+      "Advanced integrations",
+      "Multi-language support",
+      "Advanced security",
+      "Priority support",
+      "6 months support",
+      "Training included",
+      "Dedicated project manager"
+    ],
+    highlighted: false,
+    timeline: "8 weeks delivery"
+  }
+];
 
   const addOns = [
     { name: "Logo Design", price: "499" },
@@ -86,7 +176,12 @@ const Pricing = () => {
         </div>
 
         {/* Pricing Cards */}
-        <div className="grid md:grid-cols-3 gap-8 mb-16">
+        <div className="grid gap-8 mb-16 
+          sm:grid-cols-1 
+          md:grid-cols-2 
+          lg:grid-cols-3 
+          xl:grid-cols-5"
+        >
           {plans.map((plan, index) => (
             <Card 
               key={plan.name}
