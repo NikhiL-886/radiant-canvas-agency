@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import AuthModal from "./AuthModal";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -6,6 +7,15 @@ import { Link } from "react-router-dom";
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [authOpen, setAuthOpen] = useState(false);
+  const [user, setUser] = useState<any>(null);
+  useEffect(() => {
+    const storedUser = localStorage.getItem("user");
+    if (storedUser) setUser(JSON.parse(storedUser));
+    const handler = () => setAuthOpen(true);
+    window.addEventListener("openAuthModal", handler);
+    return () => window.removeEventListener("openAuthModal", handler);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -35,7 +45,11 @@ const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <div className="flex items-center space-x-3">
+          <div className="flex items-center space-x-3 cursor-pointer" onClick={() => {
+            if (user && (user.admin === true || user.Admin === true)) {
+              window.location.href = '/admin';
+            }
+          }}>
             <img 
               src="/assets/samtech-logo.png" 
               alt="Samtech Digital" 
@@ -56,17 +70,41 @@ const Header = () => {
             ))}
           </nav>
 
-          {/* CTA Button */}
-          <div className="hidden md:block">
-            <Link 
-              to='/form'>
+          {/* CTA & Auth Buttons */}
+          <div className="hidden md:flex items-center space-x-4">
+            <Link to='/form'>
               <Button
-              className="bg-gradient-to-r from-accent to-primary-glow hover:scale-105 transition-transform duration-300 animate-glow"              
+                className="bg-gradient-to-r from-accent to-primary-glow hover:scale-105 transition-transform duration-300 animate-glow"
               >
-              Request a Demo
+                Request a Demo
               </Button>
             </Link>
+            {!user ? (
+              <Button
+                className="glass border border-white/30 text-white/90 backdrop-blur-lg px-6 py-2 rounded-lg shadow-lg"
+                onClick={() => setAuthOpen(true)}
+              >
+                Login / Register
+              </Button>
+            ) : (
+              <div className="flex items-center space-x-2">
+                <span className="text-white/80 px-4">Welcome, {user.username || user.email}</span>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="text-white/90 border-white/30"
+                  onClick={() => {
+                    localStorage.removeItem('token');
+                    localStorage.removeItem('user');
+                    setUser(null);
+                  }}
+                >
+                  Logout
+                </Button>
+              </div>
+            )}
           </div>
+  <AuthModal open={authOpen} onClose={() => setAuthOpen(false)} onAuthSuccess={setUser} />
 
           {/* Mobile Menu Button */}
           <button
@@ -91,14 +129,41 @@ const Header = () => {
                   {item.name}
                 </a>
               ))}
-              <Link 
-              to='/form'>
-              <Button
-              className="bg-gradient-to-r from-accent to-primary-glow hover:scale-105 transition-transform duration-300 animate-glow"              
-              >
-              Request a Demo
-              </Button>
-            </Link>
+              <Link to='/form'>
+                <Button
+                  className="bg-gradient-to-r from-accent to-primary-glow hover:scale-105 transition-transform duration-300 animate-glow w-full"              
+                >
+                  Request a Demo
+                </Button>
+              </Link>
+              {!user ? (
+                <Button
+                  className="glass border border-white/30 text-white/90 backdrop-blur-lg px-6 py-2 rounded-lg shadow-lg w-full"
+                  onClick={() => {
+                    setAuthOpen(true);
+                    setIsMobileMenuOpen(false);
+                  }}
+                >
+                  Login / Register
+                </Button>
+              ) : (
+                <div className="flex flex-col space-y-2">
+                  <span className="text-white/80 px-4 text-center">Welcome, {user.username || user.email}</span>
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    className="text-white/90 border-white/30 w-full"
+                    onClick={() => {
+                      localStorage.removeItem('token');
+                      localStorage.removeItem('user');
+                      setUser(null);
+                      setIsMobileMenuOpen(false);
+                    }}
+                  >
+                    Logout
+                  </Button>
+                </div>
+              )}
             </nav>
           </div>
         )}

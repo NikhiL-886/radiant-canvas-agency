@@ -6,6 +6,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Mail, Phone, MapPin, Send, Clock, CheckCircle } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { getApiUrl, API_ENDPOINTS, apiRequest } from "@/config/api";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -16,7 +17,7 @@ const ContactForm = () => {
     service: "",
     budget: "",
     timeline: "",
-    message: "",
+    projectDescription: "", // Changed from 'message' to match API docs
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
@@ -29,11 +30,9 @@ const ContactForm = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-   
-  try {
-      const response = await fetch("https://backend-production-93e9.up.railway.app/api/contact", {
+    try {
+      const response = await apiRequest(API_ENDPOINTS.contact.submit, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           name: formData.name,
           email: formData.email,
@@ -42,14 +41,11 @@ const ContactForm = () => {
           service: formData.service,
           budget: formData.budget,
           timeline: formData.timeline,
-          message: formData.message
+          projectDescription: formData.projectDescription
         }),
       });
 
-      const data = await response.json();
-      console.log(data);
-
-      if (response.ok) {
+      if (response.message) {
         toast({
           title: "Message Sent Successfully!",
           description: "We'll get back to you within 24 hours.",
@@ -64,25 +60,20 @@ const ContactForm = () => {
           service: "",
           budget: "",
           timeline: "",
-          message: "",
-        });
-      } else {
-        toast({
-          title: "Error",
-          description: data.message || "Failed to send message. Please try again.",
-          variant: "destructive",
+          projectDescription: "",
         });
       }
-    } catch (error) {
+    } catch (error: any) {
       console.error("Error submitting form:", error);
       toast({
         title: "Error",
-        description: "Network error. Please check your connection and try again.",
+        description: error.message || "Failed to send message. Please try again.",
         variant: "destructive",
       });
     } finally {
       setIsSubmitting(false);
-    }  };
+    }
+  };
 
   const contactInfo = [
     {
@@ -299,8 +290,8 @@ const ContactForm = () => {
                   <div>
                     <label className="block text-sm font-medium mb-2">Project Description *</label>
                     <Textarea
-                      value={formData.message}
-                      onChange={(e) => handleInputChange("message", e.target.value)}
+                      value={formData.projectDescription}
+                      onChange={(e) => handleInputChange("projectDescription", e.target.value)}
                       placeholder="Tell us about your project, goals, and any specific requirements..."
                       rows={6}
                       required
